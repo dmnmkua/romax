@@ -62,41 +62,43 @@ const Market = ({show, click}) => {
   return (
     <div className="market">
       <div className="container">
-        <h2 className="market__title">
-          Market
-        </h2>
+        <div className="market__wrapper">
+          <h2 className="market__title">
+            Market
+          </h2>
 
-        {
-          loader && <Loader />
-        }
+          {
+            loader && <Loader />
+          }
 
-        <CustomSelect
-          itemsList={items} 
-          addSelectedItem={addSelectedItem} 
-          handleFocus={handleFocus}
-          show={show} />
+          <CustomSelect
+            itemsList={items} 
+            addSelectedItem={addSelectedItem} 
+            handleFocus={handleFocus}
+            show={show} />
 
-          <div className="btns">
-            <button
-              className="remove btn"
-              onClick={() => {
-                setSelectedItems([]);
-                localStorage.setItem('selectedItems', JSON.stringify([]));
-              }}
-              disabled={!selectedItems.length}
-            >
-              Remove list
-            </button>
+            <div className="btns">
+              <button
+                className="remove btn"
+                onClick={() => {
+                  setSelectedItems([]);
+                  localStorage.setItem('selectedItems', JSON.stringify([]));
+                }}
+                disabled={!selectedItems.length}
+              >
+                Remove list
+              </button>
 
-            <button 
-              className="reload btn"
-              onClick={fetchPrices}
-            >
-              Reload
-            </button>
-          </div>
+              <button 
+                className="reload btn"
+                onClick={fetchPrices}
+              >
+                Reload
+              </button>
+            </div>
 
-        <List list={priceList} deleteSelectedItem={deleteSelectedItem} />
+          <List list={priceList} deleteSelectedItem={deleteSelectedItem} />
+        </div>
       </div>
     </div>
   )
