@@ -1,0 +1,72 @@
+.list {
+  
+}
+
+.item {
+  display: flex;
+  line-height: 2;
+  border-bottom: 1px solid #ccc;
+  padding: 5px 0;
+  position: relative;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+
+  &--header {
+    font-weight: bold;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.name {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.pcs,
+.price {
+  flex-shrink: 0;
+  width: 100px;
+
+  @media (max-width: 768px) {
+    width: 50%;
+    display: flex;
+  }
+}
+
+.pcs {
+  text-align: center;
+}
+
+.price {
+  text-align: right;
+}
+
+.btn--delete {
+  position: absolute;
+  right: -20px;
+  background: none;
+  border: none;
+}
+
+.mob {
+  display: none;
+  margin-right: 10px;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.empty {
+  text-align: center;
+  width: 100%;
+  color: #ccc;
+  padding: 10px;
+}
