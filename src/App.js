@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Header from './Header';
+import Footer from './Footer';
 import Market from './Market';
 
 import './App.scss';
@@ -22,7 +23,10 @@ function App() {
       onClick={missClick}  
     >
       <Header />
+
       <Market show={show} click={click} />
+
+      <Footer />
     </div>
   );
 }

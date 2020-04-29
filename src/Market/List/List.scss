@@ -53,6 +53,11 @@
   right: -20px;
   background: none;
   border: none;
+
+  @media (max-width: 768px) {
+    right: 0;
+    top: 5px;
+  }
 }
 
 .mob {
